@@ -76,6 +76,13 @@ clickerButton.addEventListener(
         // håll koll på hur många gånger spelaren klickat
         numberOfClicks += 1;
         // console.log(clicker.score);
+        var image = document.getElementById('myImage');
+    
+        if (image.src.includes("image1.jpg")) {
+            image.src = "image2.jpg";
+        } else {
+            image.src = "image1.jpg";
+        }
     },
     false
 );
