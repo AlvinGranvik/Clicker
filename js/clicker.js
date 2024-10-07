@@ -76,13 +76,31 @@ clickerButton.addEventListener(
         // håll koll på hur många gånger spelaren klickat
         numberOfClicks += 1;
         // console.log(clicker.score);
-        var image = document.getElementById('myImage');
-    
-        if (image.src.includes("image1.jpg")) {
-            image.src = "image2.jpg";
-        } else {
-            image.src = "image1.jpg";
+        const image = document.getElementById('myImage');
+        //Animation Requirements + animations
+        function AniReq(numberOfClicks) {
+            const image = document.getElementById("myImage")
+            if (numberOfClicks <= 1000) {
+                if (image.src.includes("img/Standingman.png")) {
+                    image.src = "img/Punchingman1.png";
+                } else if (image.src.includes("img/Punchingman1.png")) {
+                    image.src = "img/Standingman2.png"
+                } else if (image.src.includes("img/Standingman2.png")) {
+                    image.src = "img/Punchingman2.png"
+                } else if (image.src.includes("img/Punchingman2.png")) {
+                    image.src = "img/Standingman.png"
+                }
+            } else {
+                if (image.src.includes("img/Standingman.png")) {
+                    image.src = "img/Punchingman3.png"
+                } else if (image.src.includes("img/Punchingman3.png")) {
+                    image.src = "img/Punchingman4.png"
+                } else if (image.src.includes("img/Punchingman4.png")) {
+                    image.src = "img/Punchingman3.png"
+                }
+            }
         }
+        AniReq(numberOfClicks);
     },
     false
 );
@@ -170,22 +188,22 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Sop',
+        name: 'Protein Pulver',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Kvalitetsspade',
+        name: 'Kreatin',
         cost: 50,
         clicks: 2,
     },
     {
-        name: 'Skottkärra',
+        name: 'PWO',
         cost: 100,
         amount: 10,
     },
     {
-        name: 'Grävmaskin',
+        name: 'Tren',
         cost: 1000,
         amount: 100,
     },
@@ -220,14 +238,14 @@ function createCard(upgrade) {
     } else {
         header.textContent = `${upgrade.name}, +${upgrade.clicks} per klick.`;
     }
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    cost.textContent = `Köp för ${upgrade.cost} Stenar.`;
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             acquiredUpgrades++;
             money -= upgrade.cost;
             upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
+            cost.textContent = 'Köp för ' + upgrade.cost + ' Stenar';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
             message('Grattis du har köpt en uppgradering!', 'success');
