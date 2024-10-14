@@ -12,6 +12,7 @@ const moneyTracker = document.querySelector('#money');
 const mpsTracker = document.querySelector('#mps'); // money per second
 const mpcTracker = document.querySelector('#mpc'); // money per click
 const upgradesTracker = document.querySelector('#upgrades');
+const clicksTracker = document.querySelector('#numberOfClicks');
 const upgradeList = document.querySelector('#upgradelist');
 const msgbox = document.querySelector('#msgbox');
 const audioAchievement = document.querySelector('#swoosh');
@@ -37,22 +38,22 @@ let active = false; // exempel för att visa att du kan lägga till klass för a
 
 let achievements = [
     {
-        description: 'Museet är redo att öppna, grattis! ',
+        description: 'Yummers',
         requiredUpgrades: 1,
         acquired: false,
     },
     {
-        description: 'Nu börjar det likna något, fortsätt gräva!',
+        description: 'Whey 80 connoisseur',
         requiredUpgrades: 10,
         acquired: false,
     },
     {
-        description: 'Klickare, med licens att klicka!',
-        requiredClicks: 10,
+        description: 'New combo unlocked!',
+        requiredClicks: 1000,
         acquired: false,
     },
     {
-        description: 'Tac-2 god!',
+        description: 'Tren fiend',
         requiredClicks: 10000,
         acquired: false,
     },
@@ -80,9 +81,9 @@ clickerButton.addEventListener(
         //Animation Requirements + animations
         function AniReq(numberOfClicks) {
             const image = document.getElementById("myImage")
-            if (numberOfClicks <= 1000) {
+            if (numberOfClicks <= 500) {
                 if (image.src.includes("img/Standingman.png")) {
-                    image.src = "img/Punchingman1.png";
+                    image.src = "img/Punchingman1.png"
                 } else if (image.src.includes("img/Punchingman1.png")) {
                     image.src = "img/Standingman2.png"
                 } else if (image.src.includes("img/Standingman2.png")) {
@@ -118,6 +119,7 @@ function step(timestamp) {
     moneyTracker.textContent = Math.round(money);
     mpsTracker.textContent = moneyPerSecond;
     mpcTracker.textContent = moneyPerClick;
+    clicksTracker.textContent = numberOfClicks;
     upgradesTracker.textContent = acquiredUpgrades;
 
     if (timestamp >= last + 1000) {
