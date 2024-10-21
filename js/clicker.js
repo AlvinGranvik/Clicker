@@ -81,7 +81,7 @@ clickerButton.addEventListener(
         //Animation Requirements + animations
         function AniReq(numberOfClicks) {
             const image = document.getElementById("myImage")
-            if (numberOfClicks <= 500) {
+            if (numberOfClicks <= 1000) {
                 if (image.src.includes("img/Standingman.png")) {
                     image.src = "img/Punchingman1.png"
                 } else if (image.src.includes("img/Punchingman1.png")) {
