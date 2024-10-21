@@ -266,7 +266,7 @@ function createCard(upgrade) {
         if (money >= upgrade.cost) {
             acquiredUpgrades++;
             money -= upgrade.cost;
-            upgrade.cost *= 1.5;
+            upgrade.cost = Math.round(upgrade.cost * 1.5);
             cost.textContent = 'Köp för ' + upgrade.cost + ' Stenar';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
