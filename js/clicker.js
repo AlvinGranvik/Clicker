@@ -59,6 +59,8 @@ let achievements = [
     },
 ];
 
+
+
 /* Med ett valt element, som knappen i detta fall så kan vi skapa listeners
  * med addEventListener så kan vi lyssna på ett specifikt event på ett html-element
  * som ett klick.
@@ -190,12 +192,12 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Protein Pulver',
+        name: 'Protein Powder',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Kreatin',
+        name: 'Boxing gloves',
         cost: 50,
         clicks: 2,
     },
@@ -205,10 +207,27 @@ upgrades = [
         amount: 10,
     },
     {
-        name: 'Tren',
+        name: 'Creatine',
         cost: 1000,
         amount: 100,
     },
+    {
+        name: 'Harder gloves',
+        cost: 10000,
+        clicks: 15,
+        
+    },
+    {
+        name: '"Not tren"',
+        cost: 100000,
+        amount: 1000,
+
+    },
+    {
+        name: 'Motivational music',
+        cost: 1000000,
+        clicks: 100,
+    }
 ];
 
 /* createCard är en funktion som tar ett upgrade objekt som parameter och skapar
@@ -229,6 +248,7 @@ upgrades = [
  * https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
  */
+
 function createCard(upgrade) {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -250,9 +270,9 @@ function createCard(upgrade) {
             cost.textContent = 'Köp för ' + upgrade.cost + ' Stenar';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
-            message('Grattis du har köpt en uppgradering!', 'success');
+            message('GYM SUPPLEMENT GET!!!', 'success');
         } else {
-            message('Du har inte råd.', 'warning');
+            message('get yo bands up', 'warning');
         }
     });
 

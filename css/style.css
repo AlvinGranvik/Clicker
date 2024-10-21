@@ -46,15 +46,11 @@ audio {
     margin-inline: auto;
 }
 
-.footer {
-    --min: 30ch;
-
-    margin-top: auto;
-    padding: var(--space-l-xl) 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-    gap: var(--space-s-m);
+.gymbackground {
+    display: block;
+    background-color: black;
 }
+
 .footer > * {
     font-size: var(--step--1);
 }
@@ -165,6 +161,14 @@ audio {
     right: 2vmin;
     bottom: 2vmin;
     min-width: 16rem;
+}
+
+.gymborder {
+    display: inline-block;
+    background-color: black;
+    .gymtext {
+        color: yellow;
+    }
 }
 
 #msgbox > p {

@@ -21,3 +21,11 @@ Jag bytte även ut en del av valutan på webbsidan mot min egna, samt ändrade v
 - Lade till en counter för hur många gånger som man har klickat
 - Ändrade achievements texterna
 - Bytte ut hero bilden
+
+## LEKTION 4
+-Change log 2-
+
+- Lade till 4 nya upgrades
+- Ändrade texten som kommer upp när du inte kan köpa/köper en uppgradering
+- Ändringar till credits så att de faktiskt stämmer
+- Lade till David goggins
