@@ -230,6 +230,11 @@ audio {
     background-color: navajowhite;
 }
 
+.stroketext {
+    display: inline-block;
+    background-color: navajowhite;
+}
+
 .card:hover {
     background-color:blanchedalmond;
 }
