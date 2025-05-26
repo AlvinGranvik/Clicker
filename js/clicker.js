@@ -15,7 +15,7 @@ const upgradesTracker = document.querySelector('#upgrades');
 const clicksTracker = document.querySelector('#numberOfClicks');
 const upgradeList = document.querySelector('#upgradelist');
 const msgbox = document.querySelector('#msgbox');
-const audioAchievement = document.querySelector('#swoosh');
+const audioAchievement = document.querySelector('#rocksmash');
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
  * spelaren, har och tjänar.
@@ -38,17 +38,17 @@ let active = false; // exempel för att visa att du kan lägga till klass för a
 
 let achievements = [
     {
-        description: 'Yummers',
+        description: 'RAAAAAAAAAAHHHHHHHHHHH',
         requiredUpgrades: 1,
         acquired: false,
     },
     {
-        description: 'Whey 80 connoisseur',
+        description: 'Getting angrier',
         requiredUpgrades: 10,
         acquired: false,
     },
     {
-        description: 'New combo unlocked!',
+        description: 'HEAD ON STONE SMASH HEAD STONESMASH',
         requiredClicks: 1000,
         acquired: false,
     },
@@ -58,6 +58,7 @@ let achievements = [
         acquired: false,
     },
 ];
+
 
 
 
@@ -84,22 +85,23 @@ clickerButton.addEventListener(
         function AniReq(numberOfClicks) {
             const image = document.getElementById("myImage")
             if (numberOfClicks <= 1000) {
-                if (image.src.includes("img/Standingman.png")) {
-                    image.src = "img/Punchingman1.png"
-                } else if (image.src.includes("img/Punchingman1.png")) {
-                    image.src = "img/Standingman2.png"
-                } else if (image.src.includes("img/Standingman2.png")) {
-                    image.src = "img/Punchingman2.png"
-                } else if (image.src.includes("img/Punchingman2.png")) {
-                    image.src = "img/Standingman.png"
+                if (image.src.includes("img/punch1.webp")) {
+                    image.src = "img/punch2.webp"
+                    console.log("Punching da rock")
+                } else if (image.src.includes("img/punch2.webp")) {
+                    image.src = "img/punch0.webp"
+                } else if (image.src.includes("img/punch0.webp")) {
+                    image.src = "img/punch3.webp"
+                } else if (image.src.includes("img/punch3.webp")) {
+                    image.src = "img/punch1.webp"
                 }
             } else {
-                if (image.src.includes("img/Standingman.png")) {
-                    image.src = "img/Punchingman3.png"
-                } else if (image.src.includes("img/Punchingman3.png")) {
-                    image.src = "img/Punchingman4.png"
-                } else if (image.src.includes("img/Punchingman4.png")) {
-                    image.src = "img/Punchingman3.png"
+                if (image.src.includes("img/punch1.webp")) {
+                    image.src = "img/punch4.webp"
+                } else if (image.src.includes("img/punch4.webp")) {
+                    image.src = "img/punch5.webp"
+                } else if (image.src.includes("img/punch5.webp")) {
+                    image.src = "img/punch4.webp"
                 }
             }
         }
