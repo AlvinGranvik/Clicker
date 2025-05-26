@@ -109,8 +109,9 @@ audio {
 /* flex och space between ordnar layouten för speldata och knappen på desktop */
 .game-hud {
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* important! */
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; 
     gap: var(--space-m-l);
 }
 
@@ -132,26 +133,27 @@ audio {
 
 @media (max-width: 30rem) {
     .game-hud {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .game-controls {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex: 1; /* makes sure it uses available space */
+        flex: 1;  
     }
 
 }
 
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #game-button {
-    width: var(--space-10xl-11xl);
-    height: var(--space-10xl-11xl);
+    width: clamp(10rem, 30vw, 18rem);
+    height: clamp(10rem, 30vw, 18rem);
     font-size: var(--step-2);
     border: 2px solid transparent;
     font-weight: 700;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
+    order: -1;
 }
 
 .sidebar {
@@ -160,6 +162,8 @@ audio {
     align-items: flex-start;
     max-width: 20rem;
     width: 100%;
+    max-width: 20rem;
+    flex-shrink: 0;
 }
 
 
